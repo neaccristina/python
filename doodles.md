@@ -199,6 +199,22 @@ NameError: name 'istnumeri' is not defined
 >>> print my_string.upper()
 I LIKE BLA BLA BLA
 
+>>> family = {'Dad':36, 'cat':35, 'dog':10}
+>>> family['Mom'] = 8              
+>>> family
+{'Dad': 36, 'Mom': 8, 'cat': 35, 'dog': 10} 
+>>> family['cat'] = 36            
+>>> family
+{'Dad': 36, 'Mom': 8, 'cat': 36, 'dog': 10} 
+
+>>> family.keys()        
+['Dad', 'Mom', 'cat', 'dog']
+>>> family.values()      
+[36, 8, 35, 10]
+
+>>> family.items()        
+[('Dad', 36), ('Mom', 8), ('cat', 35), ('dog', 10)]
+
 #Fibonacci try
 >>> a,b=0,1
 >>> while b<10
@@ -552,5 +568,150 @@ except:
 
 	
 i told you so
+
+
+
+>>> def noyearsleft(name,age):
+        a=100-age
+        print('your name is: ' +name +' and you are: '+age+' years old')
+        print('you have %d years left till 100'%(a))
+    
+
+>>> noyearsleft('cristina',29)
+'''
+TypeError                                 Traceback (most recent call last)
+<ipython-input-28-8feb4f95a1e3> in <module>()
+----> 1 noyearsleft('cristina',29)
+
+<ipython-input-27-2d825e14bbd3> in noyearsleft(name, age)
+      1 def noyearsleft(name,age):
+      2     a=100-age
+----> 3     print('your name is: ' +name +' and you are: '+age+' years old')
+      4     print('you have %d years left till 100'%(a))
+      5 
+
+TypeError: Can't convert 'int' object to str implicitly
+'''
+
+>>> def noyearsleft(name,age):
+      a=100-age  
+      print('your name is: ' +name +' and you are: '+str(age)+' years old')
+      print('you have %d years left till 100'%(a))
+  
+
+>>> noyearsleft('cristina',29)
+your name is: cristina and you are: 29 years old
+you have 71 years left till 100
+
+
+
+
+>>> def noyearsleft():
+        name=input('please state your name: ')
+        age=input('please state you age: ')
+        print('your name is %s and you are %d years old'%(name,int(age)))
+        a=100-int(age)
+        print('you have %d years left till 100'%(a))
+    
+
+>>> noyearsleft()
+
+please state your name: cristina
+
+please state you age: 29
+your name is cristina and you are 29 years old
+you have 71 years left till 100
+
+
+
+
+>>> number=input('please enter a number: ')
+
+please enter a number: 11
+
+>>> int(number)
+11
+
+>>> if 11%2==0:
+        print('this is an even no')
+    else:    
+        print('this is odd')
+    
+this is odd
+
+
+
+>>> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+>>> for i in range(len(a)):
+        if a[i]<5:
+           print(a[i])
+        i=i+1    
+    
+1
+1
+2
+3
+
+
+
+
+#modules
+
+>>>import fibo
+'''
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-4105c89a6fa8> in <module>()
+----> 1 import fibo
+
+ImportError: No module named 'fibo'
+'''
+
+>>>import os
+
+>>>cwd=os.getcwd()
+
+cwd
+'C:\\Program Files\\Continuum\\Anaconda3'
+
+>>>os.chdir('C:\Users\neaccri\Desktop')
+'''  File "<ipython-input-5-7611d4aef532>", line 1
+    os.chdir('C:\Users\neaccri\Desktop')
+            ^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+'''
+
+>>>os.getcwd()
+'C:\\Program Files\\Continuum\\Anaconda3'
+
+>>>os.chdir('C:\\Users\\neaccri\\Desktop')
+
+>>>os.getcwd()
+'C:\\Users\\neaccri\\Desktop'
+
+>>>import fibo
+'''ImportError                               Traceback (most recent call last)
+<ipython-input-9-4105c89a6fa8> in <module>()
+----> 1 import fibo
+
+ImportError: No module named 'fibo'
+'''
+
+>>>os.chdir('H:\\config\\Desktop')
+
+>>>os.getcwd()
+'H:\\config\\Desktop'
+
+>>>import fibo
+>>>fibo.fib(1000)
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 
+
+>>>fibo.fib2(100)
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+>>>fibo.__name__
+'fibo'
+
+
 
 ```
