@@ -714,4 +714,215 @@ ImportError: No module named 'fibo'
 
 
 
+#tests and exploring
+>>> a=[1,2,3,4,5]
+>>> c=[0]
+
+>>> for i in range(len(a)):
+        if a[i]<5:
+            c.append(a[i])
+            i=i+1    
+     print(c)
+ '''
+  File "<ipython-input-75-2ccad0758437>", line 5
+    print(c)
+            ^
+IndentationError: unindent does not match any outer indentation level
+'''
+
+>>> for i in range(len(a)):
+        if a[i]<5:
+           c.append(a[i])
+           i=i+1    
+    print(c)
+
+[0, 1, 2, 3, 4]
+
+
+
+
+
+>>> for i in range(len(a)):
+        if a[i]<5:
+            c.extend(a[i])
+            i=i+1    
+    print(c)
+
+'''
+TypeError                                 Traceback (most recent call last)
+<ipython-input-78-ff6064d1f25d> in <module>()
+      1 for i in range(len(a)):
+      2     if a[i]<5:
+----> 3         c.extend(a[i])
+      4         i=i+1
+      5 print(c)
+
+TypeError: 'int' object is not iterable
+'''
+
+>>> a=[1,2,3,4]
+
+>>> b=[5,6,7]
+
+>>> a.extend(b)
+
+>>> a
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> for i in range(len(a)):
+        if a[i]<5:
+            c.extend(str(a[i]))
+            i=i+1    
+    print(c)
+
+[0, 1, 2, 3, 4, '1', '2', '3', '4']
+
+
+
+
+
+>>> a=[1,2,3,4,5]
+
+>>> c=[6,7,8]
+
+>>> for i in range(len(a)):
+        for y in range(len(c)):
+            a.append(c[y])
+			print(a)
+			y=y+1    
+			i=i+1
+        
+[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4, 5, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8, 6]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8, 6, 7, 8]
+
+>>> a=[1,2,3,4,5]
+
+>>> c=[6,7,8]
+
+>>> for i in range(len(c)):
+		a.append(c[i])
+		print(a)
+		i=i+1
+    
+[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4, 5, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+
+>>> numcalls = 0
+
+
+>>> def square(x):
+		global numcalls
+		numcalls=numcalls+1
+		return x*x
+
+
+>>> print square(5)
+  '''File "<ipython-input-132-4f7a72491ea3>", line 1
+    print square(5)
+               ^
+SyntaxError: invalid syntax
+'''
+
+>>> print(square(5))
+25
+
+>>> square(2*5)
+100
+
+>>> x=1
+
+>>> def f():
+		return x
+
+>>> print(x)
+1
+
+>>> print(f())
+1
+
+>>> x=1
+
+>>> def f():
+		x=2
+		return x
+
+
+>>> print(x)
+1
+
+>>> print(f())
+2
+
+>>> print(x)
+1
+
+>>> x=1
+
+>>> def f():
+		y=x
+		x=2
+		return x+y
+
+>>> print (x)
+1
+
+>>> print (f())
+'''
+UnboundLocalError                         Traceback (most recent call last)
+<ipython-input-147-7b779639cddd> in <module>()
+----> 1 print (f())
+
+<ipython-input-145-fb6e3e0ffab7> in f()
+      1 def f():
+----> 2     y=x
+      3     x=2
+      4     return x+y
+      5 
+
+UnboundLocalError: local variable 'x' referenced before assignment
+'''
+
+>>> print(x)
+1
+
+>>> def difference(x,y):
+		return x-y
+
+
+>>> difference(5,2)
+3
+
+>>> difference(x=5,y=2)
+3
+
+>>> difference(5,y=2)
+3
+
+>>> difference(y=2,x=5)
+3
+
+>>> difference(x=5,2)
+''' 
+ File "<ipython-input-154-6f0a42b4bb9e>", line 1
+    difference(x=5,2)
+                  ^
+SyntaxError: non-keyword arg after keyword arg
+'''
+
+
 ```
