@@ -14,7 +14,7 @@ def countword(filename):
 			if mylist[i]=='felis':
 				counter=counter+1
 			i=i+1    
-		print('The word occurs: ',counter,' times')
+		print('The word occurs: ',counterx,' times')
 		file.close()
 	except FileNotFoundError:
 		print("The file doesn't exist in your current working path \nPlease add 'input.txt' file to: ", os.getcwd())
